@@ -39,38 +39,27 @@
         <section id="intro">
             <h1>Charater Info</h1>
             <form method="POST">
-                <table class="intro__table">
-                    <tr>
-                        <th scope="row">Name</th>
-                        <td><input type="text" value="Kelley Fischer"></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Age</th>
-                        <td><input type="number" value="32"></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Race</th>
-                        <td>
-                            <select name="races" id="races">
-                                <option value="dwarf">Dwarf</option>
-                                <option value="elf">Elf</option>
-                                <option value="gnome">Gnome</option>
-                                <option value="human" selected>Human</option>
-                                <option value="orc">Orc</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Class</th>
-                        <td><span class="intro__class">Lv 5 Front-End Web Developer</span> / <span
-                                class="intro__class">Lv 3
-                                Back-End Web Developer</span></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Background</th>
-                        <td></td>
-                    </tr>
-                </table>
+                <label>Name
+                    <input type="text" value="Kelley Fischer">
+                </label>
+                <label>Age
+                    <input type="number" value="32">
+                </label>
+                <label>Race
+                    <select name="races" id="races">
+                        <option value="dwarf">Dwarf</option>
+                        <option value="elf">Elf</option>
+                        <option value="gnome">Gnome</option>
+                        <option value="human" selected>Human</option>
+                        <option value="orc">Orc</option>
+                    </select>
+                </label>
+                <label>Class
+                    <span class="intro__class">Lv 5 Front-End Web Developer</span> / <span class="intro__class">Lv 3
+                        Back-End Web Developer</span>
+                </label>
+                <label>Background</label>
+
             </form>
         </section>
         <section id="stats">
