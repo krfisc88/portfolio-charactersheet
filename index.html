@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Montserrat&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/762fabef2a.js" crossorigin="anonymous"></script>
+    <title>KF Portfolio</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <div>
+            <a href="index.html" class="main-header__brand">fwd</a>
+        </div>
+        <nav class="main-nav">
+            <ul class="main-nav__items" id="main-nav__items">
+                <li class="main-nav__item">
+                    <a href="#">Vanilla CSS</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="#">Bootstrap</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="#">React</a>
+                </li>
+            </ul>
+            <a href="javascript:void(0);" class="main-nav__icon" onclick="mobileNavBar()">
+                <i class="fas fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <section id="intro">
+            <h1>Charater Info</h1>
+            <form method="POST">
+                <table class="intro__table">
+                    <tr>
+                        <th scope="row">Name</th>
+                        <td><input type="text" value="Kelley Fischer"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Age</th>
+                        <td><input type="number" value="32"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Race</th>
+                        <td>
+                            <select name="races" id="races">
+                                <option value="dwarf">Dwarf</option>
+                                <option value="elf">Elf</option>
+                                <option value="gnome">Gnome</option>
+                                <option value="human" selected>Human</option>
+                                <option value="orc">Orc</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Class</th>
+                        <td><span class="intro__class">Lv 5 Front-End Web Developer</span> / <span
+                                class="intro__class">Lv 3
+                                Back-End Web Developer</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Background</th>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+        <section id="stats">
+            <h1 class="section-header">Stats</h1>
+            <table class="stats__table">
+                <thead>
+                    <tr>
+                        <th scope="col">Ability</th>
+                        <th scope="col">Score</th>
+                        <th scope="col">Modifier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>HTML</th>
+                        <td>
+                            <input onChange="modifierFormula(event)" type="number" name="html-score"
+                                class="stats__score" id="html-score" value="20">
+                        </td>
+                        <td class="stats__modifier" id="html-modifier">
+                            <div id="html-mod-value">+5</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>CSS</th>
+                        <td>
+                            <input onChange="modifierFormula(event)" type="number" name="css-score" class="stats__score"
+                                id="css-score" value="18">
+                        </td>
+                        <td class="stats__modifier" id="css-modifier">
+                            <div id="css-mod-value">+4</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>JavaScript</th>
+                        <td>
+                            <input onChange="modifierFormula(event)" type="number" name="js-score" class="stats__score"
+                                id="js-score" value="16">
+                        </td>
+                        <td class="stats__modifier" id="js-modifier">
+                            <div id="js-mod-value">+3</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="skills">
+            <h1 class="section-header">Skills</h1>
+            <table class="skills__table">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Score</th>
+                        <th>Modifier</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Bootstrap</th>
+                        <td>10</td>
+                        <td class="skills__modifier"><small>(CSS/HTML) </small>+9</td>
+                        <td>+10</td>
+                    </tr>
+                    <tr>
+                        <th>Express</th>
+                        <td>10</td>
+                        <td class="skills__modifier"><small>(JS) </small>+4</td>
+                        <td>+10</td>
+                    </tr>
+                    <tr>
+                        <th>Git/GitHub</th>
+                        <td>10</td>
+                        <td class="skills__modifier"><small>(none) </small>+0</td>
+                        <td>+10</td>
+                    </tr>
+                    <tr>
+                        <th>jQuery</th>
+                        <td>10</td>
+                        <td class="skills__modifier"><small>(JS/HTML) </small>+9</td>
+                        <td>+10</td>
+                    </tr>
+                    <tr>
+                        <th>MongoDB</th>
+                        <td>10</td>
+                        <td class="skills__modifier"><small>(JS) </small>+4</td>
+                        <td>+10</td>
+                    </tr>
+                    <tr>
+                        <th>Node.js</th>
+                        <td>10</td>
+                        <td class="skills__modifier"><small>(JS) </small>+4</td>
+                        <td>+10</td>
+                    </tr>
+                    <tr>
+                        <th>React.js</th>
+                        <td>10</td>
+                        <td class="skills__modifier"><small>(JS/HTML) </small>+9</td>
+                        <td>+10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="magic-items">
+            <h1 class="section-header">Magic Items</h1>
+            <div class="card">
+                <img class="card__image" src="#" alt="#">
+                <div class="card__content">
+                    <h4>Associate in Arts</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque iusto provident dicta nesciunt
+                        eveniet praesentium similique minima assumenda veniam magni nam asperiores laborum, culpa aut
+                        totam molestiae quasi obcaecati iure?</p>
+                </div>
+                <div class="card__footer"></div>
+            </div>
+        </section>
+        <section id="work">
+            <h1 class="section-header">Experience</h1>
+        </section>
+        <section id="education"></section>
+    </main>
+    <footer>
+        <div><small>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></small></div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>

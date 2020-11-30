@@ -1,0 +1,83 @@
+
+
+main {
+    padding: 0 1.2em;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+small {
+    font-size: 0.5em;
+}
+
+h1 {
+    border-bottom: 1px solid var(--color-onyx);
+}
+
+/* Table Styles */
+table {
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    text-align: center;
+}
+
+td,
+th {
+    border-bottom: 1px solid var(--color-silver-sand);
+    padding: 12px 5px 3px;
+}
+
+thead th {
+    text-align: center;
+}
+
+/* Intro */
+#intro {
+    grid-column: 1 / -1;  
+}
+
+.intro__table td {
+    text-align: left;
+}
+
+.intro__class {
+    display: inline-block;
+}
+
+.intro__table input {
+    border: none;
+}
+
+/* Stats */
+#stats {
+    justify-self: center;
+}
+
+.stats__table th[scope="col"] {
+    border-bottom: 1px solid #aaa;
+}
+
+/* Skills */
+#skills {
+    justify-self: center;
+}
+
+.skills__modifier {
+    text-align: right;
+}
+
+
+/* Magic Items */
+
+/* Clearfix on main */
+

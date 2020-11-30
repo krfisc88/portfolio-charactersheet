@@ -1,0 +1,130 @@
+:root {
+    /* Colors */
+    --color-onyx: #313638;
+    --color-blue-ncs: #2e86abff;
+    --color-deep-chestnut: #bf4342ff;
+    --color-pistachio: #a5c882ff;
+    --color-jasmine: #f7dd72ff;
+    --color-silver-sand: #bec3c6;
+
+    /* Fonts */
+    --font-primary: "Montserrat", sans-serif;
+    --font-secondary: "Dosis", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Font sizing */
+html {
+    font-size: 17px;
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+
+/* Element Styles */
+
+body {
+    margin: 4rem 0 0;
+    font-family: var(--font-primary, sans-serif);
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+/* Navigation */
+.main-header {
+    background-color: var(--color-onyx, purple);
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.main-header > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main-header__brand {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.main-header__brand:hover,
+.main-header__brand:active {
+    color: var(--color-deep-chestnut, coral);
+}
+
+.main-nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 50px);
+    vertical-align: middle;
+}
+
+.main-nav__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav__item {
+    display: inline-block;
+    margin: 0 16px;
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+    color: var(--color-deep-chestnut, coral);
+}
+
+.main-nav__item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 3px 0;
+}
+
+.main-nav__icon {
+    display: none;
+}
+
+@media (max-width: 440px) {
+    .main-nav__items {
+        display: none;
+    }
+
+    .main-nav__icon {
+        display: block;
+        position: absolute;
+        right: 0.8em;
+        top: 0.5em;
+        color: white;
+        font-size: 1.5rem;
+    }
+}
