@@ -38,7 +38,7 @@
     <main>
         <section id="intro">
             <h1>Charater Info</h1>
-            <form method="POST">
+            <form method="POST" name="character__info">
                 <label>Name
                     <input type="text" value="Kelley Fischer">
                 </label>
@@ -108,60 +108,104 @@
         </section>
         <section id="skills">
             <h1 class="section-header">Skills</h1>
-            <table class="skills__table">
-                <thead>
-                    <tr>
-                        <th>Skill</th>
-                        <th>Score</th>
-                        <th>Modifier</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>Bootstrap</th>
-                        <td>10</td>
-                        <td class="skills__modifier"><small>(CSS/HTML) </small>+9</td>
-                        <td>+10</td>
-                    </tr>
-                    <tr>
-                        <th>Express</th>
-                        <td>10</td>
-                        <td class="skills__modifier"><small>(JS) </small>+4</td>
-                        <td>+10</td>
-                    </tr>
-                    <tr>
-                        <th>Git/GitHub</th>
-                        <td>10</td>
-                        <td class="skills__modifier"><small>(none) </small>+0</td>
-                        <td>+10</td>
-                    </tr>
-                    <tr>
-                        <th>jQuery</th>
-                        <td>10</td>
-                        <td class="skills__modifier"><small>(JS/HTML) </small>+9</td>
-                        <td>+10</td>
-                    </tr>
-                    <tr>
-                        <th>MongoDB</th>
-                        <td>10</td>
-                        <td class="skills__modifier"><small>(JS) </small>+4</td>
-                        <td>+10</td>
-                    </tr>
-                    <tr>
-                        <th>Node.js</th>
-                        <td>10</td>
-                        <td class="skills__modifier"><small>(JS) </small>+4</td>
-                        <td>+10</td>
-                    </tr>
-                    <tr>
-                        <th>React.js</th>
-                        <td>10</td>
-                        <td class="skills__modifier"><small>(JS/HTML) </small>+9</td>
-                        <td>+10</td>
-                    </tr>
-                </tbody>
-            </table>
+            <form method="POST" name="character__skills">
+                <table class="skills__table">
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Score</th>
+                            <th>Modifier</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Bootstrap <small>(CSS/HTML)</small></th>
+                            <td>
+                                <input type="number" class="skills__rank" id="rank__bootstrap" onChange="skillBonus(event)" value="10">
+                            </td>
+                            <td class="skills__modifier">
+                                <div class="skills__modifier" id="mod__bootstrap">+9</div>
+                            </td>
+                            <td>
+                                <div class="skills__bonus" id="bonus__bootstrap"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Express <small>(JS)</small></th>
+                            <td>
+                                <input type="number" class="skills__rank" id="rank__express" onChange="skillBonus(event)" value="10">
+                            </td>
+                            <td class="skills__modifier">
+                                <div class="skills__modifier" id="mod__express">+4</div>
+                            </td>
+                            <td>
+                                <div class="skills__bonus" id="bonus__express"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Git/GitHub <small>(none)</small></th>
+                            <td>
+                                <input type="number" class="skills__rank" id="rank__github" onChange="skillBonus(event)" value="10">
+                            </td>
+                            <td class="skills__modifier">
+                                <div class="skills__modifier" id="mod__github">+0</div>
+                            </td>
+                            <td>
+                                <div class="skills__bonus" id="bonus__github"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>jQuery <small>(JS/HTML)</small></th>
+                            <td>
+                                <input type="number" class="skills__rank" id="rank__jquery" onChange="skillBonus(event)" value="10">
+                            </td>
+                            <td class="skills__modifier">
+                                <div class="skills__modifier" id="mod__jquery">+9</div>
+                            </td>
+                            <td>
+                                <div class="skills__bonus" id="bonus__jquery"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>MongoDB <small>(JS)</small></th>
+                            <td>
+                                <input type="number" class="skills__rank" id="rank__mongodb" onChange="skillBonus(event)" value="10">
+                            </td>
+                            <td class="skills__modifier">
+                                <div class="skills__modifier" id="mod__mongodb">+4</div>
+                            </td>
+                            <td>
+                                <div class="skills__bonus" id="bonus__mongodb"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Node.js <small>(JS)</small></th>
+                            <td>
+                                <input type="number" class="skills__rank" id="rank__node" onChange="skillBonus(event)" value="10">
+                            </td>
+                            <td class="skills__modifier">
+                                <div class="skills__modifier" id="mod__node">+4</div>
+                            </td>
+                            <td>
+                                <div class="skills__bonus" id="bonus__node"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>React.js <small>(JS/HTML)</small></th>
+                            <td>
+                                <input type="number" class="skills__rank" id="rank__react" onChange="skillBonus()" value="10">
+                            </td>
+                            <td class="skills__modifier">
+                                <div class="skills__modifier" id="mod__react">+9</div>
+                            </td>
+                            <td>
+                                <div class="skills__bonus" id="bonus__react"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
         </section>
         <section id="magic-items">
             <h1 class="section-header">Magic Items</h1>

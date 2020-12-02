@@ -35,3 +35,7 @@ function modifierFormula(event) {
     removeElement(modElementId);
     addElement(modifierId, "div", modElementId, newMod);
 };
+
+function skillBonus(event) {
+    console.log(event.target.value);
+}
