@@ -7,12 +7,12 @@ function removeElement(elementId) {
 
 function addElement(parentId, elementTag, elementId, html) {
     // Adds an element to the document
-    const p = document.getElementById(parentId);
+    const parent = document.getElementById(parentId);
     const newElement = document.createElement(elementTag);
     const newContent = document.createTextNode(html);
     newElement.setAttribute('id', elementId);
     newElement.appendChild(newContent);
-    p.appendChild(newElement);
+    parent.appendChild(newElement);
 }
 
 function calcModifier(score) {
@@ -31,11 +31,53 @@ function modifierFormula(event) {
     const modifierId = event.target.id.split("-")[0] + "-modifier";
     const modElementId = event.target.id.split("-")[0] + "-mod-value";
 
-    newMod = calcModifier(score);
+    const newModifier = calcModifier(score);
     removeElement(modElementId);
-    addElement(modifierId, "div", modElementId, newMod);
+    addElement(modifierId, "div", modElementId, newModifier);
 };
 
+function getModifierArray(data) {
+    // Retrieves an array from HTML element and converts to an array
+    let modifierString = data.dataset.modifiers;
+    let modifierArray = JSON.parse(modifierString);
+    return modifierArray;
+}
+
+function calcSkillModifier(modifiers) {
+    // Returns the sum of an array of modifiers
+    let total = 0;
+    modifiers.map((mod) => {
+        const abilityElement = document.getElementById(mod);
+        const abilityMod = parseInt(abilityElement.innerHTML);
+        total += abilityMod;
+    });
+
+    return total;
+}
+
+function caclBonusTotal(modifiersTotal, rank) {
+    return modifiersTotal + +rank;
+}
+
 function skillBonus(event) {
-    console.log(event.target.value);
+    const skill = event.target;
+    const modifiers = getModifierArray(skill);
+
+    // Update Modifier Values
+    const modId = event.target.id + "-mod";
+    const modParent = event.target.id + "-mod-parent";
+    const modifierTotal = calcSkillModifier(modifiers);
+    let newModifier = "";
+    modifierTotal >= 0 ? newModifier = `+${modifierTotal}` : newModifier = `${modifierTotal}`;
+    removeElement(modId);
+    addElement(modParent, "div", modId, newModifier);
+
+    // Update Bonus Values
+    const bonusId = event.target.id + "-bonus"
+    const bonusParent = event.target.id + "-bonus-parent";
+    const bonusTotal = caclBonusTotal(modifierTotal, skill.value);
+    let newBonus = "";
+    bonusTotal >= 0 ? newBonus = `+${bonusTotal}` : newModifier = `${bonusTotal}`;
+    removeElement(bonusId);
+    addElement(bonusParent, "div", bonusId, newBonus);
 }
