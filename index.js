@@ -25,17 +25,6 @@ function calcModifier(score) {
     }
 }
 
-function modifierFormula(event) {
-    // Updates the modifier value of a given score
-    const score = event.target.value;
-    const modifierId = event.target.id.split("-")[0] + "-modifier";
-    const modElementId = event.target.id.split("-")[0] + "-mod-value";
-
-    const newModifier = calcModifier(score);
-    removeElement(modElementId);
-    addElement(modifierId, "div", modElementId, newModifier);
-};
-
 function getModifierArray(data) {
     // Retrieves an array from HTML element and converts to an array
     let modifierString = data.dataset.modifiers;
@@ -51,12 +40,19 @@ function calcSkillModifier(modifiers) {
         const abilityMod = parseInt(abilityElement.innerHTML);
         total += abilityMod;
     });
-
+    
     return total;
 }
 
 function caclBonusTotal(modifiersTotal, rank) {
     return modifiersTotal + +rank;
+}
+
+function updateElement(elementId, parentId, total) {
+    let newTotal = "";
+    total >= 0 ? newTotal = "+" + total : newTotal = total;
+    removeElement(elementId);
+    addElement(parentId, "div", elementId, newTotal);
 }
 
 function skillBonus(event) {
@@ -67,17 +63,24 @@ function skillBonus(event) {
     const modId = event.target.id + "-mod";
     const modParent = event.target.id + "-mod-parent";
     const modifierTotal = calcSkillModifier(modifiers);
-    let newModifier = "";
-    modifierTotal >= 0 ? newModifier = `+${modifierTotal}` : newModifier = `${modifierTotal}`;
-    removeElement(modId);
-    addElement(modParent, "div", modId, newModifier);
-
+    
+    updateElement(modId, modParent, modifierTotal);
+    
     // Update Bonus Values
     const bonusId = event.target.id + "-bonus"
     const bonusParent = event.target.id + "-bonus-parent";
     const bonusTotal = caclBonusTotal(modifierTotal, skill.value);
-    let newBonus = "";
-    bonusTotal >= 0 ? newBonus = `+${bonusTotal}` : newModifier = `${bonusTotal}`;
-    removeElement(bonusId);
-    addElement(bonusParent, "div", bonusId, newBonus);
+    
+    updateElement(bonusId, bonusParent, bonusTotal);
 }
+
+function modifierFormula(event) {
+    // Updates the modifier value of a given score
+    const score = event.target.value;
+    const modifierId = event.target.id + "-modifier";
+    const modElementId = event.target.id + "-mod-value";
+    const newModifier = calcModifier(score);
+
+    removeElement(modElementId);
+    addElement(modifierId, "div", modElementId, newModifier);
+};
