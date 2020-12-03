@@ -18,11 +18,7 @@ function addElement(parentId, elementTag, elementId, html) {
 function calcModifier(score) {
     // Calculates the modifier of a given score
     let modifier = Math.floor((score - 10) / 2);
-    if (modifier >= 0) {
-        return `+${modifier}`;
-    } else {
-        return `${modifier}`;
-    }
+    return modifier;
 }
 
 function getModifierArray(data) {
@@ -40,7 +36,7 @@ function calcSkillModifier(modifiers) {
         const abilityMod = parseInt(abilityElement.innerHTML);
         total += abilityMod;
     });
-    
+
     return total;
 }
 
@@ -50,37 +46,37 @@ function caclBonusTotal(modifiersTotal, rank) {
 
 function updateElement(elementId, parentId, total) {
     let newTotal = "";
-    total >= 0 ? newTotal = "+" + total : newTotal = total;
+    total >= 0 ? newTotal = "+" + total : newTotal = "-" + total;
     removeElement(elementId);
     addElement(parentId, "div", elementId, newTotal);
 }
 
-function skillBonus(event) {
+function handleRankChange(event) {
     const skill = event.target;
     const modifiers = getModifierArray(skill);
 
     // Update Modifier Values
-    const modId = event.target.id + "-mod";
-    const modParent = event.target.id + "-mod-parent";
+    const modId = skill.id + "-mod";
+    const modParent = skill.id + "-mod-parent";
     const modifierTotal = calcSkillModifier(modifiers);
-    
-    updateElement(modId, modParent, modifierTotal);
-    
+
+
     // Update Bonus Values
-    const bonusId = event.target.id + "-bonus"
-    const bonusParent = event.target.id + "-bonus-parent";
+    const bonusId = skill.id + "-bonus"
+    const bonusParent = skill.id + "-bonus-parent";
     const bonusTotal = caclBonusTotal(modifierTotal, skill.value);
-    
+
+    updateElement(modId, modParent, modifierTotal);
     updateElement(bonusId, bonusParent, bonusTotal);
 }
 
-function modifierFormula(event) {
+function handleScoreChange(event) {
     // Updates the modifier value of a given score
     const score = event.target.value;
-    const modifierId = event.target.id + "-modifier";
-    const modElementId = event.target.id + "-mod-value";
-    const newModifier = calcModifier(score);
 
-    removeElement(modElementId);
-    addElement(modifierId, "div", modElementId, newModifier);
+    const modId = event.target.id + "-mod";
+    const modParent = event.target.id + "-mod-parent";
+    const modTotal = calcModifier(score);
+
+    updateElement(modId, modParent, modTotal);
 };

@@ -76,31 +76,31 @@
                     <tr>
                         <th>HTML</th>
                         <td>
-                            <input onChange="modifierFormula(event)" type="number" class="stats__score" id="html"
+                            <input onChange="handleScoreChange(event)" type="number" class="stats__score" id="html"
                                 value="20">
                         </td>
-                        <td id="html-modifier">
-                            <div id="html-mod-value">+5</div>
+                        <td id="html-mod-parent">
+                            <div id="html-mod">+5</div>
                         </td>
                     </tr>
                     <tr>
                         <th>CSS</th>
                         <td>
-                            <input onChange="modifierFormula(event)" type="number" class="stats__score" id="css"
+                            <input onChange="handleScoreChange(event)" type="number" class="stats__score" id="css"
                                 value="18">
                         </td>
-                        <td id="css-modifier">
-                            <div id="css-mod-value">+4</div>
+                        <td id="css-mod-parent">
+                            <div id="css-mod">+4</div>
                         </td>
                     </tr>
                     <tr>
                         <th>JavaScript</th>
                         <td>
-                            <input onChange="modifierFormula(event)" type="number" class="stats__score" id="js"
+                            <input onChange="handleScoreChange(event)" type="number" class="stats__score" id="js"
                                 value="16">
                         </td>
-                        <td id="js-modifier">
-                            <div id="js-mod-value">+3</div>
+                        <td id="js-mod-parent">
+                            <div id="js-mod">+3</div>
                         </td>
                     </tr>
                 </tbody>
@@ -113,7 +113,7 @@
                     <thead>
                         <tr>
                             <th>Skill</th>
-                            <th>Score</th>
+                            <th>Rank</th>
                             <th>Modifier</th>
                             <th>Total</th>
                         </tr>
@@ -122,8 +122,8 @@
                         <tr>
                             <th>Bootstrap <small>(CSS/HTML)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="bootstrap" onChange="skillBonus(event)"
-                                    value="10" data-modifiers='["css-mod-value", "html-mod-value"]'>
+                                <input type="number" class="skills__rank" id="bootstrap" onChange="handleRankChange(event)"
+                                    value="10" data-modifiers='["css-mod", "html-mod"]'>
                             </td>
                             <td id="bootstrap-mod-parent">
                                 <div id="bootstrap-mod">+9</div>
@@ -135,8 +135,8 @@
                         <tr>
                             <th>Express <small>(JS)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="express" onChange="skillBonus(event)"
-                                    value="10" data-modifiers='["js-mod-value"]'>
+                                <input type="number" class="skills__rank" id="express" onChange="handleRankChange(event)"
+                                    value="10" data-modifiers='["js-mod"]'>
                             </td>
                             <td id="express-mod-parent">
                                 <div id="express-mod">+4</div>
@@ -148,7 +148,7 @@
                         <tr>
                             <th>Git/GitHub <small>(none)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="github" onChange="skillBonus(event)"
+                                <input type="number" class="skills__rank" id="github" onChange="handleRankChange(event)"
                                     value="10" data-modifiers='[]'>
                             </td>
                             <td id="github-mod-parent">
@@ -161,8 +161,8 @@
                         <tr>
                             <th>jQuery <small>(JS/HTML)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="jquery" onChange="skillBonus(event)"
-                                    value="10" data-modifiers='["js-mod-value", "html-mod-value"]'>
+                                <input type="number" class="skills__rank" id="jquery" onChange="handleRankChange(event)"
+                                    value="10" data-modifiers='["js-mod", "html-mod"]'>
                             </td>
                             <td id="jquery-mod-parent">
                                 <div id="jquery-mod">+9</div>
@@ -174,8 +174,8 @@
                         <tr>
                             <th>MongoDB <small>(JS)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="mongodb" onChange="skillBonus(event)"
-                                    value="10" data-modifiers='["js-mod-value"]'>
+                                <input type="number" class="skills__rank" id="mongodb" onChange="handleRankChange(event)"
+                                    value="10" data-modifiers='["js-mod"]'>
                             </td>
                             <td id="mongodb-mod-parent">
                                 <div id="mongodb-mod">+4</div>
@@ -187,8 +187,8 @@
                         <tr>
                             <th>Node.js <small>(JS)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="node" onChange="skillBonus(event)"
-                                    value="10" data-modifiers='["js-mod-value"]'>
+                                <input type="number" class="skills__rank" id="node" onChange="handleRankChange(event)"
+                                    value="10" data-modifiers='["js-mod"]'>
                             </td>
                             <td id="node-mod-parent">
                                 <div id="node-mod">+4</div>
@@ -200,8 +200,8 @@
                         <tr>
                             <th>React.js <small>(JS/HTML)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="react" onChange="skillBonus(event)"
-                                    value="10" data-modifiers='["js-mod-value", "html-mod-value"]'>
+                                <input type="number" class="skills__rank" id="react" onChange="handleRankChange(event)"
+                                    value="10" data-modifiers='["js-mod", "html-mod"]'>
                             </td>
                             <td id="react-mod-parent">
                                 <div id="react-mod">+9</div>
