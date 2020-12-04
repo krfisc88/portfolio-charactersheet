@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Montserrat&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/762fabef2a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="shared.css">
     <link rel="stylesheet" href="main.css">
-    <script src="https://kit.fontawesome.com/762fabef2a.js" crossorigin="anonymous"></script>
     <title>KF Portfolio</title>
 </head>
 
@@ -39,14 +38,14 @@
         <section id="intro">
             <h1>Charater Info</h1>
             <form method="POST" name="character__info">
-                <label>Name
-                    <input type="text" value="Kelley Fischer">
+                <label class="intro__label">Name
+                    <input class="intro__input" type="text" value="Kelley Fischer">
                 </label>
-                <label>Age
-                    <input type="number" value="32">
+                <label class="intro__label">Age
+                    <input class="intro__input" type="number" value="32">
                 </label>
-                <label>Race
-                    <select name="races" id="races">
+                <label class="intro__label">Race
+                    <select class="intro__input" name="races" id="races">
                         <option value="dwarf">Dwarf</option>
                         <option value="elf">Elf</option>
                         <option value="gnome">Gnome</option>
@@ -54,11 +53,11 @@
                         <option value="orc">Orc</option>
                     </select>
                 </label>
-                <label>Class
+                <label class="intro__label">Class
                     <span class="intro__class">Lv 5 Front-End Web Developer</span> / <span class="intro__class">Lv 3
                         Back-End Web Developer</span>
                 </label>
-                <label>Background</label>
+                <label class="intro__label">Background</label>
 
             </form>
         </section>
@@ -76,7 +75,7 @@
                     <tr>
                         <th>HTML</th>
                         <td>
-                            <input onChange="handleScoreChange(event)" type="number" class="stats__score" id="html"
+                            <input onChange="handleScoreChange(event)" type="number" class="stats__score table__input" id="html"
                                 value="20">
                         </td>
                         <td id="html-mod-parent">
@@ -86,7 +85,7 @@
                     <tr>
                         <th>CSS</th>
                         <td>
-                            <input onChange="handleScoreChange(event)" type="number" class="stats__score" id="css"
+                            <input onChange="handleScoreChange(event)" type="number" class="stats__score table__input" id="css"
                                 value="18">
                         </td>
                         <td id="css-mod-parent">
@@ -96,7 +95,7 @@
                     <tr>
                         <th>JavaScript</th>
                         <td>
-                            <input onChange="handleScoreChange(event)" type="number" class="stats__score" id="js"
+                            <input onChange="handleScoreChange(event)" type="number" class="stats__score table__input" id="js"
                                 value="16">
                         </td>
                         <td id="js-mod-parent">
@@ -122,7 +121,7 @@
                         <tr>
                             <th>Bootstrap <small>(CSS/HTML)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="bootstrap" onChange="handleRankChange(event)"
+                                <input type="number" class="skills__rank table__input" id="bootstrap" onChange="handleRankChange(event)"
                                     value="10" data-modifiers='["css-mod", "html-mod"]'>
                             </td>
                             <td id="bootstrap-mod-parent">
@@ -135,7 +134,7 @@
                         <tr>
                             <th>Express <small>(JS)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="express" onChange="handleRankChange(event)"
+                                <input type="number" class="skills__rank table__input" id="express" onChange="handleRankChange(event)"
                                     value="10" data-modifiers='["js-mod"]'>
                             </td>
                             <td id="express-mod-parent">
@@ -148,7 +147,7 @@
                         <tr>
                             <th>Git/GitHub <small>(none)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="github" onChange="handleRankChange(event)"
+                                <input type="number" class="skills__rank table__input" id="github" onChange="handleRankChange(event)"
                                     value="10" data-modifiers='[]'>
                             </td>
                             <td id="github-mod-parent">
@@ -161,7 +160,7 @@
                         <tr>
                             <th>jQuery <small>(JS/HTML)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="jquery" onChange="handleRankChange(event)"
+                                <input type="number" class="skills__rank table__input" id="jquery" onChange="handleRankChange(event)"
                                     value="10" data-modifiers='["js-mod", "html-mod"]'>
                             </td>
                             <td id="jquery-mod-parent">
@@ -174,7 +173,7 @@
                         <tr>
                             <th>MongoDB <small>(JS)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="mongodb" onChange="handleRankChange(event)"
+                                <input type="number" class="skills__rank table__input" id="mongodb" onChange="handleRankChange(event)"
                                     value="10" data-modifiers='["js-mod"]'>
                             </td>
                             <td id="mongodb-mod-parent">
@@ -187,7 +186,7 @@
                         <tr>
                             <th>Node.js <small>(JS)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="node" onChange="handleRankChange(event)"
+                                <input type="number" class="skills__rank table__input" id="node" onChange="handleRankChange(event)"
                                     value="10" data-modifiers='["js-mod"]'>
                             </td>
                             <td id="node-mod-parent">
@@ -200,7 +199,7 @@
                         <tr>
                             <th>React.js <small>(JS/HTML)</small></th>
                             <td>
-                                <input type="number" class="skills__rank" id="react" onChange="handleRankChange(event)"
+                                <input type="number" class="skills__rank table__input" id="react" onChange="handleRankChange(event)"
                                     value="10" data-modifiers='["js-mod", "html-mod"]'>
                             </td>
                             <td id="react-mod-parent">

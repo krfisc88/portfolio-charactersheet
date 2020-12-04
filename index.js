@@ -16,7 +16,7 @@ function addElement(parentId, elementTag, elementId, html) {
 };
 
 function calcModifier(score) {
-    // Calculates the modifier of a given score
+    // Calculates the modifier of a given ability score
     let modifier = Math.floor((score - 10) / 2);
     return modifier;
 };

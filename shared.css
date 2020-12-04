@@ -8,14 +8,13 @@
     --color-silver-sand: #bec3c6;
 
     /* Fonts */
-    --font-primary: "Montserrat", sans-serif;
-    --font-secondary: "Dosis", sans-serif;
+    --font-primary: "Lato", sans-serif;
+    --font-secondary: "Permanent Marker", cursive;
 }
 
 * {
     box-sizing: border-box;
 }
-
 
 /* Font sizing */
 html {
@@ -34,7 +33,6 @@ html {
     }
 }
 
-
 /* Element Styles */
 
 body {
@@ -50,7 +48,6 @@ h1 {
 input:focus {
     outline: none;
 }
-
 
 /* Navigation */
 .main-header {
