@@ -1,11 +1,11 @@
 :root {
     /* Colors */
-    --color-onyx: #313638;
-    --color-blue-ncs: #2e86abff;
-    --color-deep-chestnut: #bf4342ff;
-    --color-pistachio: #a5c882ff;
-    --color-jasmine: #f7dd72ff;
-    --color-silver-sand: #bec3c6;
+    --color-primary: #313638;
+    --color-primary-accent: #bec3c6;
+    --color-secondary: #2e86abff;
+    --color-tertiary: #a5c882ff;
+    --color-primary-highlight: #bf4342ff;
+    --color-secondary-highlight: #f7dd72ff;
 
     /* Fonts */
     --font-primary: "Montserrat", sans-serif;
@@ -38,7 +38,7 @@ html {
 /* Element Styles */
 
 body {
-    margin: 4rem 0 0;
+    margin: 2rem 0 0;
     font-family: var(--font-primary, sans-serif);
 }
 
@@ -52,9 +52,9 @@ input:focus {
 }
 
 
-/* Navigation */
+/* || NAVIGATION */
 .main-header {
-    background-color: var(--color-onyx, purple);
+    background-color: var(--color-primary, purple);
     font-size: 1.2rem;
     padding: 8px 16px;
     position: fixed;
@@ -77,7 +77,7 @@ input:focus {
 
 .main-header__brand:hover,
 .main-header__brand:active {
-    color: var(--color-deep-chestnut, coral);
+    color: var(--color-primary-highlight, coral);
 }
 
 .main-nav {
@@ -100,7 +100,7 @@ input:focus {
 
 .main-nav__item a:hover,
 .main-nav__item a:active {
-    color: var(--color-deep-chestnut, coral);
+    color: var(--color-primary-highlight, coral);
 }
 
 .main-nav__item a {
@@ -114,9 +114,26 @@ input:focus {
     display: none;
 }
 
-@media (max-width: 440px) {
+
+/* || MEDIA QUERIES */
+@media (max-width: 800px) {
+
+    /* Mobile Navigation Toggle */
+    .main-nav {
+        display: block;
+        width: 100%;
+    }
+
     .main-nav__items {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .main-nav__item {
+        height: 50px;
+        display: block;
     }
 
     .main-nav__icon {
@@ -126,5 +143,9 @@ input:focus {
         top: 0.5em;
         color: white;
         font-size: 1.5rem;
+    }
+
+    .menu-inactive {
+        display: none;
     }
 }

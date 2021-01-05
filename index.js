@@ -78,6 +78,8 @@ function handleScoreChange(event) {
     const modParent = abilityScore.id + "-mod-parent";
     const modTotal = calcModifier(abilityScore.value);
 
+    updateModifier(modId, modParent, modTotal);
+
     // Update each skill's bonus/penalty and total
     const skills = Array.from(document.getElementsByClassName("skills__rank"));
     skills.map(skill => {
@@ -85,6 +87,5 @@ function handleScoreChange(event) {
         updateSkillBonus(skill);
     });
 
-    updateModifier(modId, modParent, modTotal);
 };
 

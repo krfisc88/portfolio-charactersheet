@@ -1,0 +1,12 @@
+{
+    "magicitems": [
+        {
+            "itemname": "Associate in Arts Degree",
+            "description": "Obtained by defeating Ridgewater College Final Exams, the Associate in Arts Degree gives you bonuses to critical thinking, problem solving, and logic."
+        },
+        {
+            "itemname": "Udemy Complete Web Developer 2020 Bootcamp Certification",
+            "description": "Upon reaching the highest floor of the Web Developer Bootcamp, you are awarded this certificate. It adds bonuses to HTML, CSS, and JavaScript, as well as React, Bootstrap, Node.js, npm, and more."
+        }
+    ]
+}
